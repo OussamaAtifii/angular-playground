@@ -1,0 +1,13 @@
+@if (productsStore.productsResource.isLoading()) {
+  <p>Loading...</p>
+}
+
+@if (!productsStore.productsResource.hasValue()) {
+  <p>There are no products.</p>
+} @else {
+  <section class="grid grid-cols-3 gap-6 max-w-3xl mx-auto">
+    @for (product of productsStore.products(); track product.id) {
+      <app-product-card [product]="product" />
+    }
+  </section>
+}

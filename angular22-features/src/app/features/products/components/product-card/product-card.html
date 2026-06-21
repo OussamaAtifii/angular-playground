@@ -1,0 +1,66 @@
+<div
+  class="max-w-md overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 shadow-2xl transition hover:border-zinc-700 hover:shadow-zinc-950/50"
+>
+  <img [src]="product().thumbnail" [alt]="product().title" class="h-52 w-full object-cover" />
+
+  <div class="p-5">
+    <div class="mb-3 flex items-center justify-between gap-3">
+      <h2 class="text-xl font-bold text-zinc-100">
+        {{ product().title }}
+      </h2>
+
+      <span
+        class="rounded-full border border-emerald-500/20 bg-emerald-500/10 px-2 py-1 text-xs font-medium text-emerald-400"
+      >
+        {{ product().stock }}
+      </span>
+    </div>
+
+    <p class="mb-4 line-clamp-3 text-sm text-zinc-400">
+      {{ product().description }}
+    </p>
+
+    <div class="mb-5 flex items-center gap-3">
+      <span class="text-2xl font-bold text-violet-400"> ${{ product().price }} </span>
+
+      <span class="rounded-md bg-red-500/10 px-2 py-1 text-sm font-medium text-red-400">
+        -{{ product().discountPercentage }}%
+      </span>
+    </div>
+
+    <div class="mb-5 grid grid-cols-2 gap-3 text-sm">
+      <div class="rounded-lg bg-zinc-800 p-2 text-zinc-300">
+        ⭐ <span class="font-semibold">Rating</span><br />
+        {{ product().rating }}
+      </div>
+
+      <div class="rounded-lg bg-zinc-800 p-2 text-zinc-300">
+        📦 <span class="font-semibold">Stock</span><br />
+        {{ product().stock }}
+      </div>
+
+      <div class="rounded-lg bg-zinc-800 p-2 text-zinc-300">
+        🏷️ <span class="font-semibold">SKU</span><br />
+        {{ product().sku }}
+      </div>
+
+      <div class="rounded-lg bg-zinc-800 p-2 text-zinc-300">
+        ⚖️ <span class="font-semibold">Weight</span><br />
+        {{ product().weight }}
+      </div>
+    </div>
+
+    <div class="mb-5 flex flex-wrap gap-2">
+      <span class="rounded-full bg-zinc-800 px-3 py-1 text-xs text-zinc-300"> desserts </span>
+
+      <span class="rounded-full bg-violet-500/10 px-3 py-1 text-xs text-violet-400">
+        groceries
+      </span>
+    </div>
+
+    <div class="border-t border-zinc-800 pt-4 text-xs text-zinc-500">
+      <p class="mb-2">🚚 {{ product().shippingInformation }}</p>
+      <p>🛡️ {{ product().warrantyInformation }}</p>
+    </div>
+  </div>
+</div>
